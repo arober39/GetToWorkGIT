@@ -1,0 +1,162 @@
+<!DOCTYPE>
+<html>
+<head>
+  <link rel= "stylesheet" href="login-modal.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | Sign Up</title>
+
+<style>
+		.topnav {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+.bg-modal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content{
+  width: 500px;
+  height: 300px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+.button {
+	background-color: green;
+	border: 2px solid white;
+	border-radius: 30px;
+	text-decoration: none;
+	padding: 10px 28px;
+	color: white;
+	margin-top: 10px;
+	display: inline-block;
+}
+
+	.button:hover {
+		background-color: white;
+		color: blue;
+		border: 2px solid blue;
+	}
+
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 14px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+.close:hover {
+		color: #666;
+	}
+
+		</style>
+</head>
+
+
+<body>
+
+  <div class="topnav">
+  <a class="active" href="dragNdrop.html">GetToWork</a>
+  <a href="#">Quick Start</a>
+  <a href="dp.html">Jobs</a>
+  <a href="#contact">Networking</a>
+  <a href="tasklist.html">Tasks</a>
+  <a href="./ResumeCharts.jsp">Resume/Job Description</a>
+</div>
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<div class="bg-modal">
+  <div class="modal-content">
+   <!-- <img src="blue-person-icon.jpeg" alt="black-woman-icon" height="90px" width="90px"> -->
+abc
+      <input type="text" id="email" placeholder="Email" >
+      <input type="text" id="first" placeholder="First Name" >
+      <input type="text" id="last" placeholder="Last Name" >
+      <input type="text" id="username" placeholder="Username" >
+      <input type="text" id="pass" placeholder="Password" >
+      <input class="button" type = "button" onclick = "register();" name = "ok" value = "Register" />
+  
+ 
+    <!--  <input type"text" placeholder="Name">
+      <input type="text" placeholder="E-mail">  --> 
+      
+       
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDaPAXZDInCAKakKOBZXy8u-E_XbwEPq6k",
+    authDomain: "get-to-work-9215b.firebaseapp.com",
+    databaseURL: "https://get-to-work-9215b.firebaseio.com",
+    projectId: "get-to-work-9215b",
+    storageBucket: "get-to-work-9215b.appspot.com",
+    messagingSenderId: "70498652985"
+  };
+  firebase.initializeApp(config);
+  
+  function register()
+  {
+  var db = firebase.firestore();
+  db.collection("Users").add({
+      email: document.getElementById('email').value,
+      first: document.getElementById('first').value,
+      last: document.getElementById('last').value,
+      password: document.getElementById('pass').value
+  })
+  .then(function(docRef) {
+      console.log("Document written with ID: ", docRef.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+  
+  window.location.href = 'https://gettowork-73510.appspot.com/dp.html';
+  
+  }
+
+  
+</script>
+<script src="register.js"></script>
+  </head>
+  <body>
+      
+   <!--   <a href="#" class="button">Log In</a>
+      <a href="#" class="button">Sign Up</a>  --> 
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

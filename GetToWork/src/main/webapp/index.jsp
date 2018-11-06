@@ -74,6 +74,66 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <td><a href='/hello'>Hello App Engine</a></td>
     </tr>
   </table>
+  
+  
+  <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+    <h2>Application</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#bbb;" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h2>Interview</h2>
+    <p>Some text..</p>
+  </div>
+  <div class="column" style="background-color:#ccc;" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+    <h2>Offer</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+<div id="drag1"  draggable="true" ondragstart="drag(event)" >It is a job !!!!!</div>
+<br>
+<!--  <div id="drag1"  draggable="true" ondragstart="drag(event)" width="336" height="69" style="boarder:#solid;"> b <div/> -->
+  
+ <br> 
 
 <form method="POST" enctype="multipart/form-data" action="FileUploadServlet"> <!-- The action might have some issues GetToWorkServer.GetToWork -->
   File to upload: <input type="file" name="upfile"><br/>

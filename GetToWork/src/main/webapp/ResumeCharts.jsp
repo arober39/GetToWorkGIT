@@ -3,19 +3,6 @@
 <%@ page import="GetToWorkServer.GetToWork.HelloAppEngine" %>
 <html>
 <head>
-
-
-  <link href='//fonts.googleapis.com/css?family=Marmelad' rel='stylesheet' type='text/css'>
-  <title>Hello App Engine Standard Java 8</title>
-  
-
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
@@ -28,30 +15,66 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 </style>
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Get To Work</a>
-    <a href="https://gettoworkproduct.weebly.com/dev-guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Developer Guide</a>
-    <a href="https://gettoworkproduct.weebly.com/user-guide.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">User Guide</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact/Bug Report</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>
-  </div>
+<!DOCTYPE>
+<html>
+<head>
+<title>networking</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<script src="bootstable.min.js"></script>
+
+<style>
+		.topnav {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+		</style>
+</head>
+
+
+
+<body>
+
+  <div class="topnav">
+  <a class="active" href="dragNdrop.html">GetToWork</a>
+  <a href="#">Quick Start</a>
+  <a href="dp.html">Jobs</a>
+  <a href="#contact">Networking</a>
+  <a href="tasklist.html">Tasks</a>
+  <a href="./ResumeCharts.jsp">Resume/Job Description</a>
 </div>
 
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
-    <i class="fa fa-remove"></i>
-  </a>
-  <h4 class="w3-bar-item"><b>Menu</b></h4>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
-  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+
+
+<script>
+ $('#makeEditable').SetEditable({ $addButton: $('#but_add')});
+</script>
+</body>
+</html>
+
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -66,9 +89,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
        
  
 <form method="POST" enctype="multipart/form-data" action="FileUploadServlet"> <!-- The action might have some issues GetToWorkServer.GetToWork -->
-  Copy and Paste your Resume or Cover Letter: <input type="text" name="resume" id="resumeText" style="height:200px;font-size:14pt;" ><br/>
+  Copy and Paste your Resume or Cover Letter:    <br>
+  <textarea name="resume" id="resumeText" rows="20" cols="50"></textarea>  
+   
+  <br> Copy and paste a Job Description:    <br>
+   <textarea name="job" id="jobText" rows="20" cols="50"></textarea>  
+ 
+ <!--   <input type="text" name="resume" id="resumeText" style="height:200px;font-size:14pt;" ><br/>  -->
   <br/>
-  <input type="button" value="Press" onclick="getText()" id="resumeText"> 
+  <input type="button" value="Press" onclick="getGraphs()" > 
+  
 </form>
 
 <div id="demo1">  </div>
@@ -120,43 +150,93 @@ function splitByWords (text) {
 
 	}
 
-
-function getText(){
 	
-	var resumeText = document.getElementById("resumeText").value;
+
+function getGraphs(){
+	getChartForText("resumeText");
+	getChartForText("jobText");
 	
-	resumeText = resumeText.replace(/,/g, '');
-	resumeText = resumeText.replace(new RegExp('and ', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp(' for', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp(' be ', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp(':', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('to ', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('the ', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('that ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp(' on ', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('with ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp('set ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp('from ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp('when ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp(' be ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp(' for ', 'g'), '');
-	resumeText = resumeText.replace(new RegExp(' a ', 'g'), ' ');  
-	resumeText = resumeText.replace(new RegExp(' in ', 'g'), ' ');  
-	resumeText = resumeText.replace(new RegExp('-', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp(' an ', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp(' of ', 'g'), ' ');
+	compareText("resumeText", "jobText");
+	
+}
+	function getFilteredText(text){
+		
+		var resumeText = text.toLowerCase();
+		resumeText = resumeText.replace(/,/g, '');
 
-	resumeText = resumeText.replace(new RegExp('1', 'g'), '');
-	resumeText = resumeText.replace(new RegExp('2', 'g'), '');
-	resumeText = resumeText.replace(new RegExp('3', 'g'), ' ');  
-	resumeText = resumeText.replace(new RegExp('4', 'g'), ' ');  
-	resumeText = resumeText.replace(new RegExp('5', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('6', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('7', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('8', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('9', 'g'), ' ');
-	resumeText = resumeText.replace(new RegExp('0', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('-', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' is ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' are', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('and ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' for', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' be ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(':', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('to ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('the ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('that ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' on ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('with ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp('set ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp('from ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' the ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' will ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' there ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' them ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' inc. ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' its ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' it ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' we ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' such ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' were ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' was ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' you ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' your ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' inc ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' wait ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp('when ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' our ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' be ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' for ', 'g'), '');
+		resumeText = resumeText.replace(new RegExp(' a ', 'g'), ' ');  
+		resumeText = resumeText.replace(new RegExp(' in ', 'g'), ' ');  
+		resumeText = resumeText.replace(new RegExp('-', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' an ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' of ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' by ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' I ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' as ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' an ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('this', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' can ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' at ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' than ', 'g'), ' ');
 
+		resumeText = resumeText.replace(new RegExp(' make ', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp(' use ', 'g'), ' ');
+		
+		resumeText = resumeText.replace(new RegExp('1', 'g'), '');
+		resumeText = resumeText.replace(new RegExp('2', 'g'), '');
+		resumeText = resumeText.replace(new RegExp('3', 'g'), ' ');  
+		resumeText = resumeText.replace(new RegExp('4', 'g'), ' ');  
+		resumeText = resumeText.replace(new RegExp('5', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('6', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('7', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('8', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('9', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('0', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('●', 'g'), ' ');
+		resumeText = resumeText.replace(new RegExp('•', 'g'), ' ');
+		
+		return resumeText;
+		
+	}
+	
+	
+	function getChartForText(text){
+	var resumeText = document.getElementById(text).value;
+	
+	resumeText = getFilteredText(resumeText);
+	
 	var wordM = "";
 	var words = sortByCount(createWordMap(splitByWords(resumeText.toLowerCase())));
 	
@@ -167,8 +247,8 @@ function getText(){
 		
 	}
 
-	document.getElementById("demo1").innerText = wordM;
-	var chart = new CanvasJS.Chart("chartContainer", {
+	//document.getElementById("demo1").innerText = wordM;
+	var chart = new CanvasJS.Chart("chartContainer"+text, {
 		title:{
 			text: "Most Frequently Used Words"              
 		},
@@ -189,66 +269,181 @@ function getText(){
 }
 }
 
+	
+	function compareText(resume, job){
+		var resumeText = document.getElementById(resume).value;
+		//document.getElementById("r").innerHTML = document.getElementById(resume).value;
+		resumeText = getFilteredText(resumeText);
+		
+		var wordResumeM = "";
+		var wordResume = createWordMap(splitByWords(resumeText.toLowerCase()));
+		
+		for (var i = 0;i < wordResume.length;i++){
+			wordResumeM = wordResume[i].name + wordResume[i].total +" "+ wordResumeM;
+			
+		}
+		// document.getElementById("r").innerHTML =  wordResumeM;
+		
+		var jobText = document.getElementById(job).value;	
+		//document.getElementById("j").innerHTML = jobText;
+		jobText = getFilteredText(jobText);
+		var wordJobM = "";
+		var wordJob = createWordMap(splitByWords(jobText.toLowerCase()));
+		var orderJob = sortByCount(createWordMap(splitByWords(jobText.toLowerCase())));
+		
+		var inCommon = "";
+		
+		var commonWord = [];
+		var resCommon = [];
+		var jobCommon = [];
+		var suggest = [];
+		var s = "";
+		for (var i = 0; i < orderJob.length; i++) {
+			var key = orderJob[i].name;
+		    if (wordResume.hasOwnProperty(key)) {
+		    	commonWord.push(key.toString());
+		    	jobCommon.push(wordJob[key]);
+		    	resCommon.push(wordResume[key]);
+		    	inCommon = key + wordJob[key].toString() + wordJob[key].toString()+wordResume[key].toString();
+		    }else{
+		    	
+		    	suggest.push(key);
+		    	s = key+ " " + s;
+		    	
+		    }
+		    
+		}
+		
+
+		document.getElementById("r").innerHTML = suggest[0]+ ", "+ suggest[1]+ ", "+ suggest[2]+ ", "+ suggest[3];
+		/*for (var i = 0;i < wordJob.length;i++){
+			//wordJobM = wordJob[i].name + wordJob[i].total +" "+ wordJobM;
+			if(wordResume.hasOwnProperty(wordJob[i].key) ){
+				inCommon = wordJob[i].name+ inCommon;
+			}
+		}*/
+		
+	//	document.getElementById("j").innerHTML =  jobResumeM;
+		
+		
+//	}
+	
+
+	//function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Job vs Resume Words"
+	},
+	subtitles: [{
+		text: "Click Legend to Hide or Unhide Data Series"
+	}], 
+	axisX: {
+		title: "Words"
+	},
+	axisY: {
+		title: "Words",
+		titleFontColor: "#4F81BC",
+		lineColor: "#4F81BC",
+		labelFontColor: "#4F81BC",
+		tickColor: "#4F81BC"
+	},
+	axisY2: {
+		title: "Clutch - Units",
+		titleFontColor: "#C0504E",
+		lineColor: "#C0504E",
+		labelFontColor: "#C0504E",
+		tickColor: "#C0504E"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		cursor: "pointer",
+		itemclick: toggleDataSeries
+	},
+	data: [{
+		type: "column",
+		name: "Resume",
+		showInLegend: true,      
+		yValueFormatString: "#,##0.# Units",
+		
+		/*
+		var commonWord = [];
+		var resCommon = [];
+		var jobCommon = [];*/
+		dataPoints: [
+			{ label: commonWord[0],  y: resCommon[0] },
+			{ label: commonWord[1],  y: resCommon[1] },
+			{ label: commonWord[2],  y: resCommon[2] },
+			{ label: commonWord[3],  y: resCommon[3] },
+			{ label: commonWord[4],  y: resCommon[4] },
+			{ label: commonWord[5],  y: resCommon[5] },
+			{ label: commonWord[6],  y: resCommon[6] },
+			{ label: commonWord[7],  y: resCommon[7] },
+			{ label: commonWord[8],  y: resCommon[8] },
+			{ label: commonWord[9],  y: resCommon[9] }
+		]
+	},
+	{
+		type: "column",
+		name: "Job",
+		axisYType: "secondary",
+		showInLegend: true,
+		yValueFormatString: "#,##0.# Units",
+		dataPoints: [
+			{ label: commonWord[0],  y: jobCommon[0] },
+			{ label: commonWord[1],  y: jobCommon[1] },
+			{ label: commonWord[2],  y: jobCommon[2] },
+			{ label: commonWord[3],  y: jobCommon[3] },
+			{ label: commonWord[4],  y: jobCommon[4] },
+			{ label: commonWord[5],  y: jobCommon[5] },
+			{ label: commonWord[6],  y: jobCommon[6] },
+			{ label: commonWord[7],  y: jobCommon[7] },
+			{ label: commonWord[8],  y: jobCommon[8] },
+			{ label: commonWord[9],  y: jobCommon[9] }
+		]
+	}]
+});
+chart.render();
+
+
+	}
+function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+
+
 </script>
+
 </head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>    
-      
+<h1> Your Resume Data  </h1>
+<div id="chartContainerresumeText" style="height: 300px; width: 100%;"></div>    
+<h1> Job Description Data </h1>
+<div id="chartContainerjobText" style="height: 300px; width: 100%;"></div> 
+ 
+<h1> Job Description vs Resume Data </h1>
+<div id="chartContainerCompare" style="height: 300px; width: 100%;"></div> 
+
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+<div id="suggestions" ></div>
+<h2>Here are some word you should consider adding to your resume.</h2>
+<h1 id="r"></h1>
+<h1 id="j"></h1>
       <p> Welcome it Get To Work </p>
     </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
 
-  <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
-
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">»</a>
-    </div>
-  </div>
-
-  <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>Footer</h4>
-    </div>
-
-    <div class="w3-container w3-theme-l1">
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </div>
-  </footer>
-
-<!-- END MAIN -->
+ <!-- END MAIN -->
 </div>
 
 <script>
