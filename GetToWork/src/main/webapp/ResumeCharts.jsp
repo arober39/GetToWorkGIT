@@ -164,7 +164,6 @@ function getGraphs(){
 		var resumeText = text.toLowerCase();
 		resumeText = resumeText.replace(/,/g, '');
 
-		resumeText = resumeText.replace(new RegExp('-', 'g'), ' ');
 		resumeText = resumeText.replace(new RegExp(' is ', 'g'), ' ');
 		resumeText = resumeText.replace(new RegExp(' are', 'g'), ' ');
 		resumeText = resumeText.replace(new RegExp('and ', 'g'), ' ');
@@ -185,8 +184,6 @@ function getGraphs(){
 		resumeText = resumeText.replace(new RegExp(' inc. ', 'g'), '');
 		resumeText = resumeText.replace(new RegExp(' its ', 'g'), '');
 		resumeText = resumeText.replace(new RegExp(' it ', 'g'), '');
-		resumeText = resumeText.replace(new RegExp(' we ', 'g'), '');
-		resumeText = resumeText.replace(new RegExp(' such ', 'g'), '');
 		resumeText = resumeText.replace(new RegExp(' were ', 'g'), '');
 		resumeText = resumeText.replace(new RegExp(' was ', 'g'), '');
 		resumeText = resumeText.replace(new RegExp(' you ', 'g'), '');
