@@ -10,7 +10,12 @@
 	overflow: hidden;
 	background-color: #333;
 }
-
+img {
+  border-radius: 50px;
+}
+h3 {
+  color: white;
+}
 .topnav a {
 	float: left;
 	color: #f2f2f2;
@@ -40,19 +45,30 @@
   justify-content: center;
   align-items: center;
 }
-.modal-content{
+.modalcontent{
   width: 500px;
-  height: 300px;
+  height: 400px;
   background-color: white;
   border-radius: 4px;
   text-align: center;
   padding: 20px;
   position: relative;
 }
+
+.signup-modal-content {
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+
+}
 .button {
 	background-color: green;
-	border: 2px solid white;
-	border-radius: 30px;
+	border: 2px solid black;
+	border-radius: 0px;
 	text-decoration: none;
 	padding: 10px 28px;
 	color: white;
@@ -61,9 +77,9 @@
 }
 
 	.button:hover {
-		background-color: white;
-		color: blue;
-		border: 2px solid blue;
+		background-color: lightgray;
+		color: white;
+		border: 2px solid black;
 	}
 
 
@@ -80,6 +96,58 @@
 		color: #666;
 	}
 
+  /* Style the tab */
+  .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+      background-color: #ddd;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+      background-color: #ccc;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+      display: none;
+      width: 500px;
+      height: 450px;
+      background-image: url(Picture2.png);
+      border-radius: 4px;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+  }
+
+  /* Style the close button */
+  .topright {
+      float: right;
+      cursor: pointer;
+      font-size: 28px;
+  }
+
+  .topright:hover {color: red;}
+  </style>
+  </head>
+  <body>
 		</style>
 </head>
 
@@ -90,28 +158,41 @@
   <a class="active" href="dragNdrop.html">GetToWork</a>
   <a href="#">Quick Start</a>
   <a href="dp.html">Jobs</a>
-  <a href="#contact">Networking</a>
-  <a href="tasklist.html">Tasks</a>
-  <a href="./ResumeCharts.jsp">Resume/Job Description</a>
+  <a href="networking.html">Networking</a>
+  <a href="#">Tasks</a>
 </div>
 
-<link href="style.css" rel="stylesheet" type="text/css" />
 <div class="bg-modal">
-  <div class="modal-content">
-   <!-- <img src="blue-person-icon.jpeg" alt="black-woman-icon" height="90px" width="90px"> -->
-		Create an Account
-      <input type="text" id="email" placeholder="Email" >
-      <input type="text" id="first" placeholder="First Name" >
-      <input type="text" id="last" placeholder="Last Name" >
-      <input type="text" id="username" placeholder="Username" >
-      <input type="text" id="pass" placeholder="Password" >
-      <input class="button" type = "button" onclick = "register();" name = "ok" value = "Register" />
-  
- 
-    <!--  <input type"text" placeholder="Name">
-      <input type="text" placeholder="E-mail">  --> 
-      
-       
+  <div>
+  <div class="tab">
+    <button class="tablinks" onclick="openCreds(event, 'signup')" id="defaultOpen">Sign Up</button>
+    <button class="tablinks" onclick="openCreds(event, 'login')">Log In</button>
+  </div>
+
+  <div id="signup" class="tabcontent">
+    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <img src="grayish-icon.png" alt="black-woman-icon" height="90px" width="90px">
+     <h3>Create an Account</h3>
+
+       <input type="text" id="email" placeholder="Email" >
+       <input type="text" id="first" placeholder="First Name" >
+       <input type="text" id="last" placeholder="Last Name" >
+       <input type="text" id="username" placeholder="Username" >
+       <input type="text" id="pass" placeholder="Password" >
+       <input class="button" type = "button" onclick = "register();" name = "ok" value = "Register Now">
+  </div>
+
+  <div id="login" class="tabcontent">
+    <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+    <img src="grayish-icon.png" alt="black-woman-icon" height="90px" width="90px">
+     <h3>Log In</h3>
+       <input type="text" id="email" placeholder="Email">
+       <input type="text" id="pass" placeholder="Password">
+       <input class="button" type = "button" onclick = "register();" name = "ok" value = "Login">
+  </div>
+</div>
+
+
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -124,7 +205,7 @@
     messagingSenderId: "70498652985"
   };
   firebase.initializeApp(config);
-  
+
   function register()
   {
   var db = firebase.firestore();
@@ -140,23 +221,33 @@
   .catch(function(error) {
       console.error("Error adding document: ", error);
   });
-  
+
   window.location.href = 'https://gettowork-73510.appspot.com/dp.html';
-  
+
   }
 
-  
+
+  function openCreds(evt, creds) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(creds).style.display = "block";
+      evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
 </script>
 <script src="register.js"></script>
-  </head>
-  <body>
-      
-   <!--   <a href="#" class="button">Log In</a>
-      <a href="#" class="button">Sign Up</a>  --> 
-    </form>
-  </div>
-</div>
 
+   <!--   <a href="#" class="button">Log In</a>
+      <a href="#" class="button">Sign Up</a>  -->
 
 </body>
 </html>
